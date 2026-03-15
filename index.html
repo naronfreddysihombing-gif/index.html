@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
 font-family:Arial;
 background:#0b5ed7;
 color:white;
 text-align:center;
-padding:40px;
+padding:20px;
 }
 
 .card{
@@ -21,8 +22,21 @@ border-radius:10px;
 margin:20px;
 }
 
-</style>
+input{
+padding:10px;
+margin:10px;
+width:80%;
+}
 
+button{
+padding:10px 20px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+</style>
 </head>
 
 <body>
@@ -30,18 +44,61 @@ margin:20px;
 <h1>STM GADAI</h1>
 <p>Sepakat Tolong Menolong</p>
 
-<div class="card">
-<h3>Dashboard</h3>
-<p>Sistem Gadai Kendaraan</p>
+<div class="card" id="login">
+
+<h3>Login Admin</h3>
+
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+
+<button onclick="login()">Masuk</button>
+
 </div>
 
-<div class="card">
-<h3>Menu</h3>
+<div class="card" id="dashboard" style="display:none">
+
+<h3>Dashboard</h3>
+
+<p>Selamat datang Admin STM GADAI</p>
+
+<h4>Menu</h4>
+
 <p>Nasabah</p>
 <p>Gadai</p>
 <p>Pembayaran</p>
 <p>Laporan</p>
+
 </div>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+if(
+(u=="admin1" && p=="12345") ||
+(u=="admin2" && p=="12345") ||
+(u=="admin3" && p=="12345") ||
+(u=="admin4" && p=="12345") ||
+(u=="admin5" && p=="12345")
+){
+
+document.getElementById("login").style.display="none";
+document.getElementById("dashboard").style.display="block";
+
+}
+
+else{
+
+alert("Username atau Password salah")
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
